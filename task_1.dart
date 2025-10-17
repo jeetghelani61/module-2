@@ -12,6 +12,7 @@ void main() {
     int age = int.parse(ageInput);
     int yearsTo100 = 100 - age;
     
-    print('Hello, $name! You have $yearsTo100 years until you turn 100. 🎉');
+    print('Hello, $name! You have $yearsTo100 years until you turn 100. ');
   }
+
 }
