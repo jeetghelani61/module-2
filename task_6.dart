@@ -1,23 +1,25 @@
+// task_6.dart
 import 'dart:io';
 
-void main()
-{
-  print("Enter Your Marks");
-  var marks = int.parse(stdin.readLineSync().toString());
-   
-  if (marks >= 90 && marks <= 100) {
-    print("A Grade");
-  } else if (marks >= 80 && marks < 90) {
-    print("B Grade");
-  } else if (marks >= 70 && marks < 80) {
-    print("C Grade");
-  } else if (marks >= 60 && marks < 70) {
-    print("D Grade");
-  } else if (marks >= 0 && marks < 60) {
-    print("F Grade");
+void main() {
+  print('Enter the student\'s score (0-100):');
+  int score = int.parse(stdin.readLineSync()!);
+  
+  String grade;
+  
+  if (score >= 90 && score <= 100) {
+    grade = 'A';
+  } else if (score >= 80 && score < 90) {
+    grade = 'B';
+  } else if (score >= 70 && score < 80) {
+    grade = 'C';
+  } else if (score >= 60 && score < 70) {
+    grade = 'D';
+  } else if (score >= 0 && score < 60) {
+    grade = 'F';
   } else {
-    print("Fail");
+    grade = 'Invalid Score';
   }
-   
-   
+  
+  print('The student\'s grade is: $grade');
 }

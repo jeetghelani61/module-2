@@ -1,35 +1,41 @@
+// task_8.dart
 import 'dart:io';
 
 void main() {
-  print('Enter the first number: ');
+  print('Simple Calculator');
+  print('Enter the first number:');
   double num1 = double.parse(stdin.readLineSync()!);
-
-  print('Enter the second number: ');
+  
+  print('Enter the second number:');
   double num2 = double.parse(stdin.readLineSync()!);
-
-  print('Enter a choice (1, 2, 3, 4): ');
-  String choice = stdin.readLineSync()!;
-
+  
+  print('Choose an operation (+, -, *, /):');
+  String? operation = stdin.readLineSync();
+  
   double result;
-
-  switch (choice) {
-    case '1':
+  
+  switch (operation) {
+    case '+':
       result = num1 + num2;
-      print('Result: $result');
+      print('The result is: $result');
       break;
-    case '2':
+    case '-':
       result = num1 - num2;
-      print('Result: $result');
+      print('The result is: $result');
       break;
-    case '3':
+    case '*':
       result = num1 * num2;
-      print('Result: $result');
+      print('The result is: $result');
       break;
-    case '4':
-      result = num1 / num2;
-      print('Result: $result');
+    case '/':
+      if (num2 != 0) {
+        result = num1 / num2;
+        print('The result is: $result');
+      } else {
+        print('Error: Division by zero is not allowed.');
+      }
       break;
     default:
-      print('Error: Invalid operator.');
+      print('Invalid operation selected.');
   }
 }

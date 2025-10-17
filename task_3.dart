@@ -1,12 +1,13 @@
+// task_3.dart
 import 'dart:io';
 
 void main() {
   print('Enter a number:');
-  int input = int.parse(stdin.readLineSync()!);
-
-  if (input % 2 == 0) {
-    print('$input is an even number.');
+  int number = int.parse(stdin.readLineSync()!);
+  
+  if (number % 2 == 0) {
+    print('$number is an even number.');
   } else {
-    print('$input is an odd number.');
+    print('$number is an odd number.');
   }
 }

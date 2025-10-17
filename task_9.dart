@@ -1,21 +1,26 @@
+// task_9.dart
 import 'dart:io';
 
-void calculateFactorial(int n) {
-  int fact = 1;
-
+int calculateFactorial(int n) {
   if (n < 0) {
-    print('Factorial is not defined for negative numbers.');
-  } else {
-    for (int i = 1; i <= n; i++) {
-      fact *= i;
-    }
-    print('The factorial of $n is $fact');
+    return 0; // Factorial is not defined for negative numbers
   }
+  int factorial = 1;
+  for (int i = 1; i <= n; i++) {
+    factorial *= i;
+  }
+  return factorial;
 }
 
 void main() {
-  print('Enter a number:');
-  int n = int.parse(stdin.readLineSync()!);
-
-  calculateFactorial(n);
+  print('Enter a number to calculate its factorial:');
+  int number = int.parse(stdin.readLineSync()!);
+  
+  int result = calculateFactorial(number);
+  
+  if (result == 0) {
+      print('Cannot calculate factorial for a negative number.');
+  } else {
+      print('The factorial of $number is $result.');
+  }
 }
